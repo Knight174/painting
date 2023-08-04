@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas Drawing Board</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="drawingBoard" width="800" height="600"></canvas>
+    <script src="drawing-board.js"></script>
+    <div>
+      <button onclick="drawingBoard.clearCanvas()">Clear</button>
+      <button onclick="drawingBoard.undo()">Undo</button>
+      <button onclick="drawingBoard.redo()">Redo</button>
+      <button onclick="drawingBoard.saveCanvas()">Save</button>
+      <input type="color" onchange="drawingBoard.setColor(this.value)" />
+      <input
+        type="range"
+        min="1"
+        max="10"
+        value="2"
+        onchange="drawingBoard.setLineWidth(this.value)"
+      />
+    </div>
+  </body>
+</html>
